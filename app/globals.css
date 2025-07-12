@@ -1,26 +1,395 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #00ff00;
+  --accent: #00ff41;
+  --secondary: #00cc00;
+  --glow: #00ff00;
+  --terminal-bg: #001100;
+  --crt-scanline: rgba(0, 255, 0, 0.1);
+  --crt-flicker: rgba(0, 255, 0, 0.05);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-secondary: var(--secondary);
+  --color-glow: var(--glow);
+  --color-terminal-bg: var(--terminal-bg);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* CRT Effects */
+.crt-screen {
+  position: relative;
+  background: var(--background);
+  overflow: hidden;
+}
+
+.crt-screen::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    transparent 50%,
+    var(--crt-scanline) 50%
+  );
+  background-size: 100% 4px;
+  animation: scanlines 0.1s linear infinite;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.crt-screen::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    var(--crt-flicker) 50%,
+    transparent 100%
+  );
+  animation: flicker 0.15s infinite;
+  pointer-events: none;
+  z-index: 1002;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes phosphor {
+  0%, 100% { text-shadow: 0 0 5px var(--glow), 0 0 10px var(--glow), 0 0 15px var(--glow); }
+  50% { text-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow), 0 0 30px var(--glow), 0 0 25px var(--glow); }
+}
+
+@keyframes screen-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.98; }
+}
+
+/* Hacker theme animations */
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px var(--glow), 0 0 10px var(--glow), 0 0 15px var(--glow); }
+  50% { text-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow), 0 0 30px var(--glow); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes matrix {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes crt-power-on {
+  0% { 
+    opacity: 0;
+    transform: scale(0.8);
+    filter: brightness(0);
+  }
+  50% { 
+    opacity: 0.5;
+    transform: scale(0.9);
+    filter: brightness(0.5);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+.glow-text {
+  animation: phosphor 2s ease-in-out infinite alternate;
+}
+
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--glow), transparent);
+  animation: scanline 3s linear infinite;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 255, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(0, 255, 0, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.terminal-window {
+  background: var(--terminal-bg);
+  border: 1px solid var(--glow);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+  animation: screen-flicker 0.1s infinite;
+}
+
+.terminal-window:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.terminal-window::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00);
+  opacity: 0.8;
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 2px solid var(--glow);
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+}
+
+.pulse-glow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.matrix-rain {
+  position: absolute;
+  color: var(--glow);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.3;
+  animation: matrix 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glitch-effect {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.glitch-effect:hover {
+  animation: glitch 0.1s ease-in-out infinite;
+}
+
+.crt-power-on {
+  animation: crt-power-on 2s ease-out;
+}
+
+/* Hover effects */
+.hover-glow:hover {
+  text-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow);
+  transition: text-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* CRT Monitor Frame */
+.crt-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 20px solid #1a1a1a;
+  border-radius: 20px;
+  box-shadow: 
+    inset 0 0 20px rgba(0, 255, 0, 0.1),
+    0 0 30px rgba(0, 255, 0, 0.2);
+  pointer-events: none;
+  z-index: 999;
+}
+
+.crt-frame::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid rgba(0, 255, 0, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glow);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .glow-text {
+    animation: phosphor 3s ease-in-out infinite alternate;
+  }
+  
+  .scanline {
+    animation: scanline 4s linear infinite;
+  }
+  
+  .crt-screen::before {
+    background-size: 100% 3px;
+  }
+}
+
+/* Loading animation */
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* CRT Power Button */
+.crt-power {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border: 2px solid var(--glow);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1003;
+  transition: all 0.3s ease;
+}
+
+.crt-power:hover {
+  background: var(--glow);
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.crt-power::before {
+  content: '⏻';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--glow);
+  font-size: 16px;
+}
+
+.crt-power:hover::before {
+  color: #000;
 }

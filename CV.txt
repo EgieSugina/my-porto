@@ -1,0 +1,102 @@
+
+EGIE SUGINA
+Developer
+Bandung
+Full Stack Developer
+Hirata.id
+2016 ‑ 2018
+Sebagai Full Stack Developer di Hirata.id, saya berperan dalam
+pengembangan aplikasi berbasis web untuk klien perusahaan besar seperti
+Pertamina Lubricants, Jakarta International Container Terminal (JICT), dan
+lainnya. Dalam pekerjaan ini, saya menggunakan teknologi AngularJS
+sebagai framework utama untuk pengembangan front‑end dan mendukung
+pengembangan sistem end‑to‑end.
+Pencapaian utama:
+Merancang dan mengimplementasikan antarmuka pengguna yang
+intuitif dan responsif.
+Mengintegrasikan API dan layanan backend untuk mendukung
+kebutuhan operasional klien berskala besar.
+Berkontribusi pada pengembangan aplikasi yang digunakan oleh ribuan
+pengguna secara efektif.
+Bekerja sama dalam tim lintas fungsi untuk memastikan kelancaran
+setiap tahap proyek, mulai dari analisis kebutuhan hingga peluncuran
+produk.
+Keahlian:
+Front‑end Development: AngularJS, HTML5, CSS3, JavaScript
+Back‑end Development: Node.js, Express.js (atau teknologi lain yang
+relevan)
+Database Management: MySQL, MongoDB
+Pengalaman bekerja pada proyek dengan skala besar dan kebutuhan
+tinggi.
+Aug 2016 - Aug 2018
+Developer
+Jakarta Selatan
+Full Stack Developer
+PT. Neural Technologies Indonesia (NTI)
+2018 - sekarang
+Sebagai Full Stack Developer di PT. Neural Technologies Indonesia (NTI),
+saya bertanggung jawab atas pengembangan aplikasi berbasis web untuk
+perusahaan besar seperti Telkomsel dan berbagai perusahaan di industri
+telekomunikasi lainnya. Dalam peran ini, saya menggunakan teknologi
+modern seperti React, Tailwind CSS, Node.js, danPython untuk
+membangun solusi yang efisien dan skalabel.
+Pencapaian utama:
+Merancang dan mengembangkan aplikasi front-end yang user-friendly
+menggunakan React danTailwind CSS, memberikan pengalaman
+pengguna yang optimal.
+Mengintegrasikan backend berbasisNode.js danPython, mendukung
+kebutuhan skala besar perusahaan telekomunikasi.
+Mengimplementasikan arsitektur sistem yang skalabel untuk memastikan
+kinerja aplikasi tetap optimal meskipun menangani jutaan pengguna.
+Berkolaborasi dengan tim lintas fungsi untuk mengidentifikasi kebutuhan
+bisnis dan menerjemahkannya menjadi solusi teknologi.
+Meningkatkan efisiensi proses pengembangan aplikasi melalui
+pengadopsian praktik pengkodean terbaik dan optimalisasi pipeline
+DevOps.
+Sep 2018 - Sep 2025
+PERSONAL
+Name
+Egie Sugina
+Address
+Bongas, Pamanukan, Subang,
+Jawa Barat, Indonesia
+41254 Subang
+Phone number
+081320276231
+Email
+egiesugina704@gmail.com
+Date of birth
+21-05-1998
+Place of birth
+Subang
+Gender
+Male
+Nationality
+Indonesia
+Website
+https://errorgeist.id/
+LinkedIn
+https://www.linkedin.com/in/egiesugina-857680179/
+WORK EXPERIENCE
+Keahlian:
+Front-end Development: React, Tailwind CSS, JavaScript, TypeScript
+Back-end Development: Node.js, Python, Express.js
+Database Management: PostgreSQL, MongoDB, MSSQL
+DevOps Tools: Docker, Git, CI/CD
+Pengalaman membangun dan mengelola aplikasi dengan kebutuhan
+skala besar di sektor telekomunikasi data.
+RPL
+SMKN 2 Subang, Subang
+Pendidikan
+SMKN 2 Subang
+Rekayasa Perangkat Lunak (RPL)
+2013 ‑ 2016
+Mendalami pengembangan perangkat lunak, mulai dari analisis
+kebutuhan, desain sistem, hingga implementasi dan pengujian aplikasi.
+Menguasai dasar‑dasar pemrograman seperti Java, PHP, HTML, CSS, dan
+database management.
+Berpartisipasi dalam berbagai proyek dan praktik kerja industri,
+memberikan pengalaman langsung dalam membangun aplikasi berbasis
+desktop maupun web.
+Sep 2013 - Jul 2016
+EDUCATION AND QUALIFICATIONS
