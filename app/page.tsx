@@ -325,7 +325,7 @@ export default function Home() {
     <div className={t.bg + ' min-h-screen transition-colors duration-500'}>
       {/* Theme Selector */}
       <div className="fixed top-4 right-4 z-50 flex gap-2 bg-white/80 dark:bg-black/80 rounded-full shadow px-4 py-2 border border-gray-200 dark:border-gray-700">
-        {Object.entries(themes).map(([key, th],index) => (
+        {Object.entries(themes).map(([key],index) => (
           <button
             key={key}
             onClick={() => setTheme(key as 'fullstack' | 'devops' | 'hacker')}
