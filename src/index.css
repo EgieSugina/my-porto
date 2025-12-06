@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ac-red: rgb(255, 51, 51);
+  --ac-orange: rgb(255, 102, 51);
+  --ac-cyan: rgb(0, 212, 255);
+}
+
+@layer base {
+  body {
+    @apply bg-ac-darker text-ac-white font-rajdhani;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+
+  /* Glowing button effect */
+  .btn-glow {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300;
+    background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.4), transparent);
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-100;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Scanline effect */
+  .scanline {
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-b from-transparent via-ac-cyan to-transparent opacity-20;
+    animation: scan 8s linear infinite;
+  }
+
+  /* Glitch effect for text */
+  .glitch {
+    position: relative;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    animation: glitch-1 2s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.025em, -0.0125em);
+    opacity: 0.8;
+  }
+
+  .glitch::after {
+    animation: glitch-2 2s infinite;
+    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+    transform: translate(0.025em, 0.0125em);
+    opacity: 0.8;
+  }
+
+  @keyframes glitch-1 {
+
+    0%,
+    100% {
+      transform: translate(0);
+    }
+
+    20% {
+      transform: translate(-2px, 2px);
+    }
+
+    40% {
+      transform: translate(-2px, -2px);
+    }
+
+    60% {
+      transform: translate(2px, 2px);
+    }
+
+    80% {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  @keyframes glitch-2 {
+
+    0%,
+    100% {
+      transform: translate(0);
+    }
+
+    20% {
+      transform: translate(2px, -2px);
+    }
+
+    40% {
+      transform: translate(2px, 2px);
+    }
+
+    60% {
+      transform: translate(-2px, -2px);
+    }
+
+    80% {
+      transform: translate(-2px, 2px);
+    }
+  }
+
+  /* Grid background */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 51, 51, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 51, 51, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+  }
+
+  /* Input field styling */
+  .input-field {
+    @apply w-full bg-ac-gray/40 border border-ac-border text-ac-white px-4 py-3 focus:outline-none focus:border-ac-red transition-all duration-300 backdrop-blur-sm placeholder-ac-white/40;
+  }
+
+  .input-field:focus {
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.8),
+      0 0 20px rgba(255, 51, 51, 0.5),
+      0 0 30px rgba(255, 51, 51, 0.3);
+  }
+
+  .text-cyan-glow {
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.8),
+      0 0 20px rgba(0, 212, 255, 0.5),
+      0 0 30px rgba(0, 212, 255, 0.3);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.5),
+      inset 0 0 10px rgba(255, 51, 51, 0.2);
+  }
+}

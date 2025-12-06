@@ -1,0 +1,132 @@
+
+
+Egie Sugina
+
+Bongas No.14 Rt 01 Rw 01
+
+Pamanukan Subang
+
+Email: egi.sugina@nti.co.id
+
+Mobile: +62 81320276231
+
+
+
+ Resume
+
+Full Stack Developer with 7+ years of experience in building scalable web applications, backend APIs, and enterprise solutions.
+
+Skilled in front-end development (React, AngularJS, Tailwind CSS) and back-end development (Node.js, Java, Python).
+
+Experienced in database management (PostgreSQL, MongoDB, MSSQL, SQLite).
+
+Proficient in DevOps tools and practices including Docker, Git, and CI/CD pipelines.
+
+Hands-on expertise in business intelligence and analytics using Grafana, Tableau, and Power BI.
+
+Successfully delivered solutions for major clients in telecommunications, logistics, and energy sectors.
+
+Strong track record in modernizing legacy systems and improving development workflows.
+
+Adept at collaborating with cross-functional teams to translate business needs into technical solutions.
+
+
+
+Professional  Experience
+
+
+
+Full Stack Developer                                                                                  Sep 2018 – Present
+
+As a Full Stack Developer at PT. Neural Technologies Indonesia (NTI), I was responsible for developing enterprise-grade web applications and data visualization solutions for major clients such as Telkomsel. In this role, I utilized React and Tailwind CSS for front-end development, and Node.js, Java, and Python for backend API development. I also implemented business intelligence and analytics dashboards using Grafana, Tableau, and Power BI, providing actionable insights to stakeholders.
+
+
+
+Responsible :
+
+Developing and maintaining full-stack applications to support telecommunications and enterprise clients.
+
+Designing and integrating backend APIs using Node.js, Java, and Python.
+
+Building scalable, user-friendly front-end applications with React and Tailwind CSS.
+
+Implementing business intelligence solutions with Grafana, Tableau, and Power BI for real-time analytics and reporting.
+
+Ensuring application performance, scalability, and security in high-demand environments.
+
+Collaborating with cross-functional teams to align business needs with technical solutions.
+
+Supporting DevOps processes including CI/CD, Docker, and system monitoring.
+
+Accomplishments :
+
+Designed and developed user-friendly front-end applications with React and Tailwind CSS.
+
+Integrated backend systems using Node.js, Java, and Python to meet large-scale enterprise requirements.
+
+Implemented scalable architecture ensuring system performance and availability under high user loads.
+
+Developed BI and monitoring solutions using Grafana, Tableau, and Power BI for both operational and strategic reporting.
+
+Collaborated with cross-functional teams to translate business requirements into robust technology solutions.
+
+Improved development workflow efficiency through best coding practices and CI/CD pipeline optimization.
+
+
+
+Full Stack Developer                                                                               Aug 2016 – Aug 2018
+
+As a Full Stack Developer at Hirata.id, I was involved in developing web-based applications for major clients such as Pertamina Lubricants, Jakarta International Container Terminal (JICT), and others. In this role, I used AngularJS as the primary framework for front-end development and Node.js and Java for backend API development, supporting full end-to-end system delivery.
+
+Responsible : 
+
+Delivered enterprise-grade web applications for Pertamina 	Lubricants.
+
+Delivered mobile solutions for Jakarta International 	Container Terminal (JICT).
+
+Modernized legacy systems by migrating them into scalable web platforms.
+
+Boosted team productivity through structured workflows and best practices.
+
+
+
+Accomplishments :
+
+Designed and implemented intuitive and responsive user 	interfaces.
+
+Integrated APIs and backend services to support large-scale client operations.
+
+Developed and maintained backend APIs using Node.js and Java, ensuring reliability and scalability.
+
+
+
+Formal Education & Professional Development 
+
+
+
+SMKN 2 Subang, Software Engineering (RPL).
+
+NDG Linux Unhatched & Essentials
+
+TOEFL, Scores 487
+
+
+
+Recent Training & Others
+
+Training Institution
+
+Location
+
+Date
+
+Training Name
+
+UNSUB
+
+Online
+
+Agustus 2023
+
+Next Generation Network Cisco IPv6
+
